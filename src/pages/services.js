@@ -80,7 +80,7 @@ const Services = () => {
 
                     <TextBlock>
                       <h2 className="text-gray-800">Jamstack Web Development</h2>
-                      <p>I specialize in developing secure and highly performant websites using the <a href="https://jamstack.wtf/">Jamstack</a>. The Jamstack is a modern web development architecture that is decoupled, static-first and progressively-enhanced. Using this approach, I am able to create websites that are fast, secure, easily scalable and inexpensive. Faster and more reliable sites mean better user experiences, higher SEO rankings and happy customers.</p>
+                      <p>I specialize in developing secure and highly performant websites using the <a href="https://jamstack.wtf/">Jamstack</a>. The Jamstack is a modern web development architecture that is decoupled, static-first and progressively-enhanced. Using this approach, I'm able to create websites that are fast, secure, easily scalable and inexpensive. Fast and secure sites lead to better user experiences, higher SEO rankings and happy customers.</p>
                     </TextBlock>
                   </section>
 
