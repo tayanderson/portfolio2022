@@ -7,17 +7,31 @@ import Cta from "../components/CTA";
 const technologies = {
   cms: [
     {
-      name: 'Forestry',
-      website: 'https://forestry.io/'
-    },
-    {
-      name: 'Netlify CMS',
-      website: 'https://www.netlifycms.org/'
+      name: 'TinaCMS',
+      website: 'https://tina.io/'
     },
     {
       name: 'Contentful',
       website: 'https://contentful.com/'
-    }
+    },
+    {
+      name: 'Sanity',
+      website: 'https://www.sanity.io/'
+    },
+    {
+      name: 'Strapi',
+      website: 'https://strapi.io/'
+    },
+  ],
+  sitebuilders: [
+    {
+      name: 'Squarespace',
+      website: 'https://squarespace.com/'
+    },
+    {
+      name: 'Webflow',
+      website: 'https://webflow.com/'
+    },
   ],
   ssg: [
     {
@@ -78,50 +92,62 @@ const Services = () => {
                       Services
                     </h1>
 
-                    <TextBlock>
-                      <h2 className="text-gray-800">Jamstack Web Development</h2>
-                      <p>I specialize in developing secure and highly performant websites using the <a href="https://jamstack.wtf/">Jamstack</a>. The Jamstack is a modern web development architecture that is decoupled, static-first and progressively-enhanced. Using this approach, I'm able to create websites that are fast, secure, easily scalable and inexpensive. Fast and secure sites lead to better user experiences, higher SEO rankings and happy customers.</p>
-                    </TextBlock>
-                  </section>
+                    <section>
 
-                  <section>
-                    <TextBlock>
-                      <h3 className="text-gray-800">Technologies I Use</h3>
-                      <p>I utilize a variety of the latest web tools to deliver the web solutions that best fit your unique business needs. I work with you to choose the right combination of modern web tools for your needs. These are the tools I work with most often:</p>
-                    </TextBlock>
+                      <TextBlock>
+                        <h2 className="text-gray-800">Custom Web Development Solutions</h2>
+                        <p>I specialize in developing secure and highly performant websites using the <a href="https://jamstack.wtf/">Jamstack</a> and popular site builders like Squarespace and Webflow. The Jamstack is a modern web development architecture that is decoupled, static-first and progressively-enhanced. Using this approach, I'm able to create websites that are fast, secure, easily scalable and inexpensive. Fast and secure sites lead to better user experiences, higher SEO rankings and happy customers.</p>
+                      </TextBlock>
 
-                    <div className="-mt-4 border-y border-gray-300 py-6">
-                      <h4 className="font-semibold pb-5 text-lg">Headless Content Management Systems</h4>
-                      <div className="flex flex-wrap -mb-6">
-                        {technologies.cms.map(item => (
-                          <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
-                            {item.name}
-                          </a>
-                        ))}
+                      <TextBlock>
+                        <h3 className="text-gray-800">Technologies I Use</h3>
+                        <p>I utilize a variety of the latest web tools to deliver the web solutions that best fit your unique business needs. I work with you to choose the right combination of modern web tools for your needs. These are the tools I work with most often:</p>
+                      </TextBlock>
+
+                      <div className="-mt-4 border-y border-gray-300 py-6">
+                        <h4 className="font-semibold pb-5 text-lg">Headless Content Management Systems</h4>
+                        <div className="flex flex-wrap -mb-6">
+                          {technologies.cms.map(item => (
+                            <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="border-b border-gray-300 py-6">
-                      <h4 className="font-semibold pb-5 text-lg">Static Site Generators / Frameworks</h4>
-                      <div className="flex flex-wrap -mb-6">
-                        {technologies.ssg.map(item => (
-                          <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full  font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
-                            {item.name}
-                          </a>
-                        ))}
+                      <div className="border-b border-gray-300 py-6">
+                        <h4 className="font-semibold pb-5 text-lg">Website Builders</h4>
+                        <div className="flex flex-wrap -mb-6">
+                          {technologies.sitebuilders.map(item => (
+                            <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full  font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="border-b border-gray-300 py-6">
-                      <h4 className="font-semibold pb-5 text-lg">Deployment Platforms</h4>
-                      <div className="flex flex-wrap -mb-6">
-                        {technologies.deployment.map(item => (
-                          <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full  font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
-                            {item.name}
-                          </a>
-                        ))}
+                      <div className="border-b border-gray-300 py-6">
+                        <h4 className="font-semibold pb-5 text-lg">Static Site Generators / Frameworks</h4>
+                        <div className="flex flex-wrap -mb-6">
+                          {technologies.ssg.map(item => (
+                            <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full  font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+
+                      <div className="border-b border-gray-300 py-6">
+                        <h4 className="font-semibold pb-5 text-lg">Deployment Platforms</h4>
+                        <div className="flex flex-wrap -mb-6">
+                          {technologies.deployment.map(item => (
+                            <a href={`${item.website}`} className="bg-gray-300 px-4 py-1 rounded-full  font-thin text-gray-800 tracking-wide hover:bg-gray-800 hover:text-gray-100 transition duration-150 ease-in-out mr-6 mb-6">
+                              {item.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </section>
 
                   </section>
 
