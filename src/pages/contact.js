@@ -73,7 +73,7 @@ function ContactPage() {
                     rows="8"
                     name="message"
                   />
-                <input value="Send Message" type="Submit" className="py-3 px-8 font-medium border border-gray-800 text-base rounded-full text-white bg-gray-800 hover:bg-transparent hover:text-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out" />
+                  <button type="submit" className="py-3 px-8 font-medium border border-gray-800 text-base rounded-full text-white bg-gray-800 hover:bg-transparent hover:text-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">Send Message</button>
                 </form>
               </div>
               )}

@@ -8,8 +8,10 @@ const Hero = () => (
         <div
           className={isVisible ? "slideDown enter" : "slideDown"}
         >
-        <h1 className="w-full md:w-2/3" data-sal="fade" data-sal-easing="ease">
-            <span className="text-3xl sm:text-5xl font-bold leading-tight tracking-tight text-gray-800 block">Designer & Front-end Developer based in Chicago, IL.</span>
+        <h1 className="w-full md:w-9/12" data-sal="fade" data-sal-easing="ease">
+            <div className="text-3xl sm:text-4xl font-bold !leading-[1.25] tracking-tight text-gray-800 block">
+              I'm a designer & web developer that works with founders, brands, artists, restaurants and bars to create thoughtful web experiences.
+            </div>
         </h1>
       </div>
     )}
