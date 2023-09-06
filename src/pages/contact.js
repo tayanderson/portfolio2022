@@ -28,8 +28,12 @@ function ContactPage() {
                   name="contact"
                   data-netlify="true"
                   action="/thank-you"
-                  >
-                  <input type="hidden" name="bot-field" />
+                >
+                  <p class="hidden">
+                    <label>
+                      Don’t fill this out if you’re human: <input name="bot-field" />
+                    </label>
+                  </p>                  
                   <input type="hidden" name="form-name" value="contact" />
 
                   <label
@@ -44,6 +48,7 @@ function ContactPage() {
                     id="name"
                     type="text"
                     name="name"
+                    required
                   />
 
                   <label
@@ -58,6 +63,7 @@ function ContactPage() {
                     id="email"
                     type="email"
                     name="email"
+                    required
                   />
 
                   <label
@@ -72,12 +78,13 @@ function ContactPage() {
                     id="message"
                     rows="8"
                     name="message"
+                    required
                   />
                   <button type="submit" className="py-3 px-8 font-medium border border-gray-800 text-base rounded-full text-white bg-gray-800 hover:bg-transparent hover:text-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">Send Message</button>
                 </form>
               </div>
-              )}
-            </VisibilitySensor>
+            )}
+          </VisibilitySensor>
         </div>
       </div>
     </Layout>
