@@ -53,19 +53,27 @@ function ContactPage() {
                     required
                   >
                     <option selected disabled value="">Select Project Type</option>
-                    <option value="website-redesign">Website Redesign</option>
-                    <option value="new-website">New Website</option>
-                    <option value="other">Other (please specify)</option>
+                    <option value="Website Redesign">Website Redesign</option>
+                    <option value="New Website">New Website</option>
+                    <option value="Other">Other (please specify)</option>
                   </select>
-                  {projectType === 'other' &&
-                    <input
-                      className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
-                      id="project-type-other"
-                      type="text"
-                      name="project-type-other"
-                      required
-                      placeholder="Specify your project type"
-                    />
+                  {projectType === 'Other' &&
+                    <>
+                      <label
+                        className="hidden"
+                        htmlFor="project-type-other"
+                      >
+                        Specify project type?
+                      </label>
+                      <input
+                        className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
+                        id="project-type-other"
+                        type="text"
+                        name="project-type-other"
+                        required
+                        placeholder="Specify your project type"
+                      />
+                    </>
                   }
 
                   <label
@@ -81,9 +89,9 @@ function ContactPage() {
                     required
                   >
                     <option selected disabled value="">Select Service</option>
-                    <option value="Design">Web Design</option>
-                    <option value="Design & Dev">Web Design & Development</option>
-                    <option value="Dev">Web Development</option>
+                    <option value="Design">Design</option>
+                    <option value="Design & Dev">Design & Development</option>
+                    <option value="Dev">Development</option>
                   </select>
 
                   <label
