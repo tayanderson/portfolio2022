@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import Layout from "../layouts/Layout"
 import SiteMetadata from "../components/SiteMetadata"
 import VisibilitySensor from "../components/VisibilitySensor";
 
 function ContactPage() {
+  const [projectType, setProjectType] = useState('');
+
   return (
     <Layout>
-      <SiteMetadata title="contact" />
+      <SiteMetadata title="Contact" />
       <div className="bg-gray-0 py-12 lg:py-16">
         <div className="container">
 
@@ -16,13 +18,14 @@ function ContactPage() {
                 className={isVisible ? "slideDown enter max-w-screen-md mx-auto mb-16" : "slideDown max-w-screen-md mx-auto mb-16 prose prose-lg"}
               >
                 <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-gray-800 sm:text-4xl mb-6">
-                  Contact
+                  Tell me about your project
                 </h1>
-
-                <p className="mb-10 prose-lg">You can get in touch with me by sending a message using the form below or shooting me an <a href="mailto:andersstaylor@gmail.com" className="underline font-semibold">email</a>.</p>
+                <p className="mb-10 prose-lg">
+                  If you are interested in working together, just fill out the form below to help me understand your specific project needs. You can shoot me an <a href="mailto:andersstaylor@gmail.com" className="underline font-semibold">email</a> for any other inquiries. Thanks!
+                </p>
 
                 <form
-                  className="mx-auto w-full"
+                  className="mx-auto w-full bg-white rounded-lg p-10 shadow-md"
                   method="post"
                   netlify-honeypot="bot-field"
                   name="contact"
@@ -33,8 +36,74 @@ function ContactPage() {
                     <label>
                       Don’t fill this out if you’re human: <input name="bot-field" />
                     </label>
-                  </p>                  
+                  </p>
                   <input type="hidden" name="form-name" value="contact" />
+
+                  <label
+                    className="block mb-2 font-bold text-gray-800 text-xl"
+                    htmlFor="project-type"
+                  >
+                    What type of project do you need completed?
+                  </label>
+                  <select
+                    name="project-type"
+                    id="project-type"
+                    onChange={(e) => setProjectType(e.target.value)}
+                    className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
+                    required
+                  >
+                    <option selected disabled value="">Select Project Type</option>
+                    <option value="website-redesign">Website Redesign</option>
+                    <option value="new-website">New Website</option>
+                    <option value="other">Other (please specify)</option>
+                  </select>
+                  {projectType === 'other' &&
+                    <input
+                      className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
+                      id="project-type-other"
+                      type="text"
+                      name="project-type-other"
+                      required
+                      placeholder="Specify your project type"
+                    />
+                  }
+
+                  <label
+                    className="block mb-2 font-bold text-gray-800 text-xl"
+                    htmlFor="services"
+                  >
+                    Which services do you need?
+                  </label>
+                  <select
+                    name="services"
+                    id="services"
+                    className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
+                    required
+                  >
+                    <option selected disabled value="">Select Service</option>
+                    <option value="Design">Web Design</option>
+                    <option value="Design & Dev">Web Design & Development</option>
+                    <option value="Dev">Web Development</option>
+                  </select>
+
+                  <label
+                    className="block mb-2 font-bold text-gray-800 text-xl"
+                    htmlFor="timeline"
+                  >
+                    When do you need this project completed?
+                  </label>
+                  <select
+                    name="timeline"
+                    id="timeline"
+                    className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
+                    required
+                  >
+                    <option selected disabled value="">Select Completion Time</option>
+                    <option value="Less than 1 month">Less than 1 month</option>
+                    <option value="1-2 Months">1-2 Months</option>
+                    <option value="3-6 Months">3-6 Months</option>
+                    <option value="6 Months +">6 Months +</option>
+                  </select>
 
                   <label
                     className="block mb-2 font-bold text-gray-800 text-xl"
@@ -44,7 +113,7 @@ function ContactPage() {
                   </label>
 
                   <input
-                    className="w-full mb-6 form-input p-2 focus:outline-black"
+                    className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
                     id="name"
                     type="text"
                     name="name"
@@ -52,14 +121,14 @@ function ContactPage() {
                   />
 
                   <label
-                    className="block mb-2 font-bold text-gray-800 text-xl p-2"
+                    className="block mb-2 font-bold text-gray-800 text-xl"
                     htmlFor="email"
                   >
                     Email Address
                   </label>
 
                   <input
-                    className="w-full mb-6 form-input p-2 focus:outline-black"
+                    className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
                     id="email"
                     type="email"
                     name="email"
@@ -67,20 +136,34 @@ function ContactPage() {
                   />
 
                   <label
-                    className="block mb-2 font-bold text-gray-800 text-xl p-2"
+                    className="block mb-2 font-bold text-gray-800 text-xl"
+                    htmlFor="website-url"
+                  >
+                    Website URL <span className="font-normal text-lg">(optional)</span>
+                  </label>
+
+                  <input
+                    className="w-full mb-6 form-input border border-gray-600 p-2 rounded focus:outline-black font-medium"
+                    id="website-url"
+                    type="url"
+                    name="website-url"
+                    placeholder="https://example.com"
+                  />
+
+                  <label
+                    className="block mb-2 font-bold  text-gray-800 text-xl"
                     htmlFor="message"
                   >
-                    Message
+                    Additional Details
                   </label>
 
                   <textarea
-                    className="w-full mb-6 form-textarea focus:outline-black p-2"
+                    className="w-full mb-6 form-textarea border border-gray-600 rounded focus:outline-black p-2 font-medium"
                     id="message"
-                    rows="8"
+                    rows="4"
                     name="message"
-                    required
                   />
-                  <button type="submit" className="py-3 px-8 font-medium border border-gray-800 text-base rounded-full text-white bg-gray-800 hover:bg-transparent hover:text-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">Send Message</button>
+                  <button type="submit" className="py-3 px-8 font-medium border border-gray-800 text-base rounded-full text-white bg-gray-800 hover:bg-transparent hover:text-gray-800 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">Submit</button>
                 </form>
               </div>
             )}
